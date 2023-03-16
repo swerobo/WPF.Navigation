@@ -8,14 +8,7 @@
         xmlns:views="clr-namespace:WPF.Navigation.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <ContentControl Content="{Binding CurrentViewModel}">
-        <ContentControl.Resources>
-            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
-                <views:HomeView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodels:HelpViewModel}">
-                <views:HomeView/>
-            </DataTemplate>
-        </ContentControl.Resources>
-    </ContentControl>
+    <Grid>
+
+    </Grid>
 </Window>

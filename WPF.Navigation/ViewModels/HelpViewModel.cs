@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WPF.Navigation.Commands;
 
 namespace WPF.Navigation.ViewModels
 {
-    public class HelpViewModel : ViewModelBase
+    public class HelpViewModel : BaseViewModel
     {
-        public string Name => "Robban";
-
-        public ICommand NavigateCommand { get;}
     }
 }

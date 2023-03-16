@@ -5,8 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using WPF.Navigation.Services;
 using WPF.Navigation.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace WPF.Navigation
 {
@@ -15,21 +15,6 @@ namespace WPF.Navigation
     /// </summary>
     public partial class App : Application
     {
-        private readonly IServiceProvider _serviceProvider;
-        public App()
-        {
-            IServiceCollection services = new ServiceCollection();
-            _serviceProvider = services.BuildServiceProvider();
-        }
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            INavigationService initialNavigationService = _serviceProvider.GetRequiredService<INavigationService>();
-            initialNavigationService.Navigate();
-
-            MainWindow = _serviceProvider.GetRequiredService<MainWindow>();
-            MainWindow.Show();
-
-            base.OnStartup(e);
-        }
+      
     }
 }
