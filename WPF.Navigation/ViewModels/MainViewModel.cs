@@ -5,27 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using WPF.Navigation.Commands;
+using WPF.Navigation.Store;
 
 namespace WPF.Navigation.ViewModels
 {
-    public class MainViewModel : BaseViewModel
+    public class MainViewModel : ViewModelBase
     {
-        private BaseViewModel _selectedViewModel;
-        public BaseViewModel SelectedViewModel
+        private readonly NavigationStore _navigationStore;
+        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
+
+        public MainViewModel(NavigationStore navigationStore)
         {
-            get { return _selectedViewModel; }
-            set
-            {
-                _selectedViewModel = value;
-                OnPropertyChanged(nameof(SelectedViewModel));
-            }
+            _navigationStore = navigationStore;
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
 
-        public ICommand UpdateViewCommand { get; set; }
-
-        public MainViewModel()
+        private void OnCurrentViewModelChanged()
         {
-            UpdateViewCommand = new UpdateViewCommand(this);
+            OnPropertyChanged(nameof(CurrentViewModel));
         }
     }
 }

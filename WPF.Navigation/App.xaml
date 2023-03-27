@@ -3,14 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WPF.Navigation"
              xmlns:views="clr-namespace:WPF.Navigation.Views"
-             xmlns:viewmodels="clr-namespace:WPF.Navigation.ViewModels"
-             StartupUri="MainWindow.xaml">
+             xmlns:viewmodels="clr-namespace:WPF.Navigation.ViewModels">
     <Application.Resources>
         <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
             <views:HomeView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:HelpViewModel}">
-            <views:HelpView/>
         </DataTemplate>
     </Application.Resources>
 </Application>

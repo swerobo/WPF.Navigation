@@ -18,9 +18,9 @@ namespace WPF.Navigation.Views
     /// <summary>
     /// Interaction logic for HelpView.xaml
     /// </summary>
-    public partial class HelpView : UserControl
+    public partial class AccountView : UserControl
     {
-        public HelpView()
+        public AccountView()
         {
             InitializeComponent();
         }
